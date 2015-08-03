@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="zcgl"
+  id="myeclipse.1418121783717"
+  context-root="/zcgl"
+  j2ee-spec="5.0"
+  archive="zcgl.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

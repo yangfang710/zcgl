@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--指定全局国际化资源文件base名 -->
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<!--指定国际化编码所使用的字符集 -->
+	<constant name="struts.i18n.encoding" value="UTF8" />
+	<!-- 上传的全部图片的最大限制 -->
+	<constant name="struts.multipart.maxSize" value="1024102400" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="web" extends="struts-default" namespace="/">
+	
+		<!--定义拦截器 -->
+		<interceptors>
+			<!--定义权限拦截器 -->
+			<interceptor name="authority" class="com.cqupt.login.AuthorityInterceptor"></interceptor>
+			<interceptor-stack name="mydefaultstcak">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="authority"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefaultstcak"></default-interceptor-ref>
+		<global-results>
+			<result name="login" type="dispatcher">/reLogin.jsp</result>
+		</global-results>
+<!-- 登录 -->		
+		<!-- 登录页面 -->
+		<action name="login" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result>/login.jsp</result>
+		</action>
+		
+		<!-- 登录验证成功 跳转到主页 -->
+		<action name="loginAction" class="com.cqupt.login.LoginAction">
+			<!--定义3个逻辑试图和物理资源之间的映射 -->
+			<result name="success">/mainFrame/frame.jsp</result>
+		</action>
+		<!-- 登录验证 -->
+		<action name="checkLoginAction" class="com.cqupt.login.CheckLoginAction"></action>
+		<action name="loginOutAction" class="com.cqupt.login.LoginOutAction"></action>
+		<action name="userMenuAction" class="com.cqupt.login.UserMenuAction"></action>
+		<!--  菜单表URL action与Jsp对应关系
+		<action name="welcomeAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/mainFrame/welcome11.jsp</result>
+		</action> -->
+		<!-- 系统管理 修改密码 -->
+		<action name="changePWDAction" class="com.cqupt.login.ChangePWDAction"></action>
+		
+
+
+<!-- 系统管理 -->
+		<!-- 系统管理 第一个子菜单 菜单表里指向的userManager -->
+		<action name="onLineUserManagerAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/sysManage/onLineUser.jsp</result>
+		</action>
+		<!-- 系统管理 查询在线用户 -->
+		<action name="onLineUserAction" class="com.cqupt.sysManage.action.OnLineUserAction"></action>
+		<!-- 系统管理 强制用户退出登录 -->
+		<action name="onlineUserForceExitAction" class="com.cqupt.sysManage.action.OnlineUserForceExitAction"></action>
+
+		<!-- 系统管理 组织机构管理 -->
+		<action name="organizationManageAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/sysManage/organizationManage.jsp</result>
+		</action>
+		<!-- 系统管理 点击树事件 -->
+		<action name="organizationQueryAction" class="com.cqupt.sysManage.action.OrganizationQueryAction">
+			<result type="stream">
+				<param name="contentType">text/xml</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	<!-- 系统管理 组织机构列表 -->
+	<action name="organizationListQueryAction"	class="com.cqupt.sysManage.action.OrganizationListQueryAction"></action>
+	
+	<!-- 系统管理 组织机构新增  -->
+	<action name="organizationDeptAddAction" class="com.cqupt.sysManage.action.OrganizationDeptAddAction"></action>
+	<!-- 系统管理 组织机构修改 -->
+	<action name="organizationModifyAction"	class="com.cqupt.sysManage.action.OrganizationModifyAction">
+		<result name="modify">/sysManage/organizationModify.jsp</result>
+	</action>
+	<!-- 系统管理 组织机构更新 -->
+	<action name="organizationDeptUpdateAction"	class="com.cqupt.sysManage.action.OrganizationDeptUpdateAction"></action>
+	<!-- 系统管理 组织机构删除 -->
+	<action name="organizationListDeleteAction"	class="com.cqupt.sysManage.action.OrganizationListDeleteAction"></action>
+<!-- 系统管理 组织机构EXCEL下载 -->
+	<action name="organizationDown" class="com.cqupt.sysManage.action.OrganizationDown">
+		<result name="excel" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+		</result>
+	</action>
+	
+	
+	<!-- 系统管理 用户管理 -->
+	<action name="userManageAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+		<result name="success">/sysManage/userManager.jsp</result>
+	</action>
+	<!-- 系统管理 用户查询 -->
+	<action name="userManagerQueryAction"	class="com.cqupt.sysManage.action.UserManagerQueryAction"></action>
+	<!-- 系统管理用户管理 新增用户 -->
+	<action name="userManagerAddUserAction"	class="com.cqupt.sysManage.action.UserManagerAddUserAction"></action>
+	<!-- 系统管理用户管理 新增用户 选择用户所属组 -->
+	<action name="groupNameQueryAction"	class="com.cqupt.sysManage.action.GroupNameQueryAction"></action>
+	
+	<!--系统管理 用户管理 修改用户传参 -->
+	<action name="userManagerModifyAction"	class="com.cqupt.sysManage.action.UserManagerModifyAction">
+		<result name="modify">/sysManage/userManagerModify.jsp</result>
+	</action>
+	<!-- 系统管理用户管理 修改用户重置密码 -->
+	<action name="userManagerPasswordModifyAction"	class="com.cqupt.sysManage.action.UserManagerPasswordModifyAction"></action>
+	<!--系统管理 用户管理 修改用户操作 -->
+	<action name="userManagerUpdateAction"	class="com.cqupt.sysManage.action.UserManagerUpdateAction"></action>
+	<!-- 系统管理用户管理 删除用户 -->
+	<action name="userManagerDeleteUserAction"	class="com.cqupt.sysManage.action.UserManagerDeleteUserAction"></action>
+	<!-- HR ~end~ -->
+
+	<!-- 用户EXCEL下载 -->
+	<action name="UserDown" class="com.cqupt.sysManage.action.UserDown">
+		<result name="excel" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+		</result>
+	</action>
+	<!-- 系统管理 点击树事件 显示所有部门 -->
+	<action name="organizationQueryAllAction"
+		class="com.cqupt.sysManage.action.OrganizationQueryAllAction">
+		<result type="stream">
+			<param name="contentType">text/xml</param>
+			<param name="inputName">inputStream</param>
+		</result>
+	</action>
+
+<!-- 与资产相关的操作 -->
+	<action name="productListAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/product/productList.jsp</result>
+	</action>
+	<!-- 资产列表查询 -->
+	<action name="productQueryAction" class="com.cqupt.product.ProductQueryAction"></action>
+	<!-- 资产增加 -->
+	<action name="productAddAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/product/productAdd.jsp</result>
+		</action>
+	<action name="productAdd" class="com.cqupt.product.ProductAddAction"></action>
+	<action name="manageUserQueryAction" class="com.cqupt.product.ManageUserQueryAction"></action>
+	<action name="selectQueryAction" class="com.cqupt.product.SelectQueryAction"></action>
+	<!-- 资产修改 -->
+	<action name="productModifyAction" class="com.cqupt.product.ProductModifyAction">
+			<result name="modify">/product/productModify.jsp</result>
+			<result name="batchModify">/product/productModifyBatch.jsp</result>
+			<result name="edit">/product/productEdit.jsp</result>
+			<result name="detail">/product/productDetail.jsp</result>
+	</action>
+	<action name="productUpdate" class="com.cqupt.product.ProductUpdateAction"></action>
+	<!-- 批量修改 -->
+	<action name="productUpdateBatch" class="com.cqupt.product.ProductUpdateBatch"></action>
+	<!-- 资产状态变更 -->
+	<action name="productEdit" class="com.cqupt.product.ProductEditAction"></action>
+	<!-- 删除资产 -->
+	<action name="productDelete" class="com.cqupt.product.ProductDeleteAction"></action>
+	<!-- 资产导出excel -->
+	<action name="productDownExcel"	class="com.cqupt.product.ProductDownExcel">
+		<result name="excel" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+		</result>
+	</action>
+		<!-- 资产excel模板 -->
+		<action name="productExcelFileDownloadAction"
+			class="com.cqupt.product.ProductExcelFileDownloadAction">
+			<result name="success">/product/productFileDownload.jsp</result>
+		</action>
+		<!-- 资产 Excel添加 -->
+		<action name="productAddExcelAction" class="com.cqupt.product.ProductAddExcelAction"></action>
+		<!-- 资产 历史记录查询-->
+		<action name="productQueryDetailAction" class="com.cqupt.product.ProductQueryDetailAction"></action>
+	
+	
+	<!-- 与统计相关的操作 -->
+	<action name="chartAction" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/statistics/show.jsp</result>
+	</action>
+	<action name="findAction" class="com.cqupt.statistics.FindAction">
+		<result name="find1">/statistics/show1.jsp</result> 
+		<result name="pie1">/statistics/showPie1.jsp</result>
+		<result name="find2">/statistics/show2.jsp</result>
+		<result name="pie2">/statistics/showPie2.jsp</result>
+		<result name="find3">/statistics/show3.jsp</result>
+		<result name="pie3">/statistics/showPie3.jsp</result>
+		<result name="find4">/statistics/show4.jsp</result>
+		<result name="pie4">/statistics/showPie4.jsp</result>
+		<result name="find5">/statistics/show5.jsp</result>
+		<result name="pie5">/statistics/showPie5.jsp</result>
+	</action>
+	<!-- 统计导出excel -->
+	<action name="statisticsDownExcel"	class="com.cqupt.statistics.StatisticsDownExcel">
+		<result name="excel" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+		</result>
+	</action>
+	<!-- 公告管理模块 -->
+	<action name="f_gonggao" class="com.cqupt.sysMenu.action.WelcomeAction">
+			<result name="success">/ads/adsList.jsp</result>
+	</action>
+	<!-- 上传附件 -->
+	<action name="sysScanUploadAction" class="com.cqupt.ads.SysScanUploadAction"></action>
+	<!-- 添加公告信息 -->
+	<action name="adsAddAction" class="com.cqupt.ads.AdsAddAction"></action>
+	<!--公告信息列表 -->
+	<action name="adsQueryAction" class="com.cqupt.ads.AdsQueryAction"></action>
+	<!--公告详情查询 -->
+	<action name="messageReadAction" class="com.cqupt.ads.MessageReadAction">
+		<result name="success">/ads/messageRead.jsp</result>
+	</action>
+	<!-- 系统管理 公告附件下载 -->
+		<action name="messageFileDownloadAction"
+			class="com.cqupt.ads.MessageFileDownloadAction">
+			<result name="download">/ads/messageFileDownload.jsp</result>
+		</action>
+	<!--删除 -->
+	<action name="adsDeleteAction" class="com.cqupt.ads.AdsDeleteAction"></action>
+	<!-- 修改公告信息 -->
+	<action name="adsModifyAction" class="com.cqupt.ads.AdsModifyAction">
+		<result name="success">/ads/modifyAds.jsp</result>
+	</action>
+	<action name="adsUpdateAction" class="com.cqupt.ads.AdsUpdateAction"></action>
+	<!-- 首页显示的公告信息 -->
+	<action name="welcomeAction" class="com.cqupt.ads.ShouyeAction">
+		<result name="success">/mainFrame/welcome11.jsp</result>
+	</action>
+	</package>
+</struts>

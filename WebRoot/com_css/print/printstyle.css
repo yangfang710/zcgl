@@ -1,0 +1,164 @@
+* {
+  padding:0;
+  margin:0;
+  line-height: 1.5;
+
+}
+.clear{
+  clear:both;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+
+#wrap {
+  
+  width: 1136px;
+  height: 800px;
+  background-color: #eee;
+  overflow: hidden;
+}
+/* header */
+#header {
+  margin-top: 15px;
+  width: 1136px;
+  height: 60px;
+}
+.header-logo {
+  float: left;
+  width: 240px;
+  height: 50px;
+  background: url(./images/header-logo.jpg) no-repeat;
+  background-position: -6px;
+}
+.header-title {
+  float: left;
+  margin-left: 183px;
+  width: 303px;
+  height: 60px;
+  font: 42px/1.5em \9ED1\4F53;
+  font-weight: bold;
+  letter-spacing: 0.7em;
+}
+.header-tinfo {
+  width: 1136px;
+  height: 43px;
+  font-size: 13pt;
+  font-weight: bolder;
+}
+.header-tinfo-caseNum {
+  float: right;
+  width: 235px;
+  height: 20px;
+  letter-spacing: 1px  \9;
+}
+.header-tinfo-repair {
+  float: left;
+  margin-left: 28px;
+  width: 464px;
+  height: 23px;
+}
+.header-tinfo-ctnum {
+  float:left;
+  width: 409px;
+  height: 23px;
+}
+.header-tinfo-fax{
+  float:left;
+  width: 214px;
+  height: 23px;
+}
+
+/* /header */
+
+/* table */
+#info {
+  font-size: 17px;
+  font-weight: bolder;
+  margin-left: 12px;
+}
+#info td {
+  border:2px solid #000;
+}
+#info tr {
+  height: 29px;
+}
+.info-caseTime {
+  width: 175px;
+  height: 30px;
+}
+.info-caseTimeV {
+  width: 167px;
+  height: 30px;
+}
+.info-caseNum {
+  width: 90px;
+  height: 30px;
+  letter-spacing: -1px;
+}
+.info-caseNumV {
+  width: 116px;
+  height: 30px;
+}
+.info-casePurTime {
+  width: 73px;
+  height: 30px;
+}
+.info-casePurTimeV {
+  width:129px;
+  height: 30px;
+}
+.info-caseBug {
+  width: 394px;
+  vertical-align: top;
+  text-indent: 5em;
+}
+.info-pfr {
+  vertical-align: top;
+  text-indent: 5em;
+}
+.info-ctNum {
+  letter-spacing: -1px;
+}
+.info-remark {
+  vertical-align: top;
+}
+.info-acsign {
+  vertical-align: top;
+}
+.info-cltime {
+  vertical-align: top;
+}
+/* /table  */
+.info-inner {
+  width: 100%;
+  height: 145px;
+}
+#info .info-record {
+  border: none;
+  vertical-align: top;
+  width: 226px;
+}
+#info .info-faultK {
+ border-top: none;
+ border-right: none;
+ vertical-align: top;
+}
+#info .info-fee {
+  border-bottom: none;
+  vertical-align: top;
+}
+#info .lastInfo {
+  height: 252px;
+}
+.lastInfo {
+  font-size: 12px;
+}
+.lastInfo ul {
+  list-style: none
+}
+.lastInfo li {
+  line-height: 2em;
+}

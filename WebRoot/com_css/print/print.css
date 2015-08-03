@@ -1,0 +1,13 @@
+body {
+	visibility:hidden;
+}
+.print {
+	visibility: visible;
+}
+#header {
+	display: none;
+}
+.header-tinfo {
+	margin-top: 20px;
+}
+

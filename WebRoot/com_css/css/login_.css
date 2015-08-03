@@ -1,0 +1,290 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0;
+}
+*{
+	font-family: \9ED1\4f53, Verdana ;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,img {
+	border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+abbr,acronym {
+	border: 0;
+}
+
+body {
+	background: #FDFDFD;
+}
+
+#header {
+	width: 974px;
+	height: 75px;
+}
+
+#header #logo {
+	margin: 17px 0 0 0px;
+	float: left;
+}
+
+#mainnav {
+	width: 974px;
+	height: 42px;
+	background: url(../../images/mainnav_bg.gif);
+	margin: 3;
+}
+
+#mainnav li {
+	float: left;
+	margin-right: 40px;
+}
+
+#footer {
+	font-size: 12px;
+	width: 974px;
+	text-align: center;
+	margin: 0 auto;
+	font-family: Arial;
+	color: #666666;
+	margin-top: 8px;
+	line-height: 40px;
+	border-top: 1px solid #e4e9ec;
+}
+
+
+#lyout {
+	width: 974px;
+	overflow: hidden;
+	margin: 0 auto;
+	height:475px;	
+}
+
+#lyout_link {
+	width: 974px;
+	height: 30px;
+	border-top: 1px solid #e4e9ec;
+	overflow: hidden;
+	margin: 0 auto;
+	background: #FFFFFF;
+	font-size: 12px;
+	color: #010697;
+	text-align: left;
+	padding: 10px 0 0 0;
+}
+
+#lyout_link span {
+	margin: 0px 20px;
+}
+
+#lyout .left {
+	width: 646px;
+	float: left;
+	overflow: hidden;
+}
+
+#lyout .right {
+	float: right;
+}
+
+#lyout .left  img {
+	display: block;
+}
+
+#lyout .left .yewugg {
+	width: 419px;
+	border: 1px solid #dbe1e6;
+	height: 194px;
+	float: left;
+	margin-top: 8px;
+}
+
+#lyout .left .yewugg dt {
+	height: 29px;
+	background: url(../../images/dt_bg.gif) repeat-x;
+	font-size: 12px;
+	font-weight: bold;
+	color: #00177e;
+	line-height: 29px;
+	padding-left: 8px;
+}
+
+#lyout .left .yewugg dd ul {
+	margin-top: 8px;
+}
+
+#lyout .left .yewugg dd ul li {
+	font-size: 12px;
+	text-align: right;
+	height: 24px;
+	width: 400px;
+	font-family: Arial;
+	color: #999;
+}
+
+#lyout .left .yewugg dd ul li a {
+	font-size: 12px;
+	color: #666666;
+	float: left;
+	line-height: 24px;
+	padding-left: 13px;
+	background: url(../../images/mark3.gif) 4px 9px no-repeat;
+	text-decoration: none;
+}
+
+#lyout .left .yewugg dd ul li a:hover {
+	text-decoration: underline;
+}
+
+#lyout .left #zixun {
+	width: 215px;
+	height: 194px;
+	float: left;
+	margin-left: 8px;
+	display: inline;
+	border: 1px solid #dbe1e6;
+	margin-top: 8px;
+}
+
+#lyout .left #zixun dt {
+	height: 29px;
+	background: url(../../images/dt_bg.gif) repeat-x;
+	font-size: 12px;
+	font-weight: bold;
+	color: #00177e;
+	line-height: 29px;
+	padding-left: 8px;
+}
+
+#lyout .left #zixun dd ul {
+	margin-top: 6px;
+	margin-left: 18px;
+}
+
+#lyout .left #zixun dd ul li {
+	font-size: 12px;
+	color: #666666;
+	font-family: Arial;
+	line-height: 26px;
+}
+
+#lyout .right  .login {
+	width: 318px;
+	height: 238px; border : 1px solid #dbe1e6;
+	border-top: none;
+	background: url(../../images/login_box_bg.gif) bottom;
+	border: 1px solid #dbe1e6;
+}
+
+#lyout .right  .login dt {
+	height: 46px;
+	background: url(../../images/dailishang_title1.gif) left no-repeat;
+}
+
+#lyout .right  .login dt a {
+	
+}
+
+#lyout .right  .login dd table {
+	width: 300px;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+#lyout .right  .login dd table td {
+	height: 32px;
+	font-size: 12px;
+	color: #666666;
+}
+
+#lyout .right  .login dd table td.label {
+	text-align: center;
+	width: 80px;
+	font-family: Arial;
+	line-height: 32px;
+}
+
+#lyout .right  .login dd table td input {
+	height: 18px;
+	border: 1px solid #cecece;
+	background: #fff url(../../images/input_bg.gif) repeat-x;
+	padding-top: 4px;
+	color: #666666;
+	margin-right: 6px;
+}
+
+#lyout .right  .login dd table .login_button {
+	width: 69px;
+	height: 26px;
+	background: url(../../images/login_button.gif) no-repeat;
+	border: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+#lyout .right  .login dd table .reset_button {
+	width: 69px;
+	height: 26px;
+	background: url(../../images/cz.gif) no-repeat;
+	border: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+#lyout .right  .login dd table .reset {
+	line-height: 30px;
+	margin-right: 20px;
+	margin-left: 10px;
+	display: inline;
+}
+
+#lyout .right .lianjie {
+	width: 318px;
+	border: 1px solid #dbe1e6;
+	margin-top: 8px;
+	height: 205px;
+	float: left;
+	background: url(../../images/login_box_bg.gif);
+}
+
+#lyout .right .lianjie dt {
+	height: 29px;
+	background: url(../../images/dt_bg.gif) repeat-x;
+	font-size: 12px;
+	font-weight: bold;
+	color: #00177e;
+	line-height: 29px;
+	padding-left: 8px;
+}
+
+#lyout .right .lianjie dd img {
+	margin-top: 25px;
+	margin-left: 20px;
+}

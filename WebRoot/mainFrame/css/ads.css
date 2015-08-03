@@ -1,0 +1,58 @@
+ul.column{
+	padding:0;
+	margin:0;
+	font:normal 12px "宋体";
+	border:1px solid #000;
+}
+ul.column li{
+	height:26px;
+	line-height:26px;
+	margin:0 4px;
+	border-bottom:1px dashed #ccc;
+	vertical-align:middle;
+	padding-left:24px;
+	text-overflow:ellipsis;   /*文字隐藏后添加省略号*/
+	white-space:nowrap;
+	overflow:hidden;
+	
+}
+ul.column li,ul.column li.title div{
+	background:url("column.gif") no-repeat;
+}
+ul.column li a{
+	text-decoration:none;
+}
+ul.column li a:hover{
+	color:red;
+}
+ul.column li.title,ul.column li.tail{
+	border-width:0;
+}
+ul.column li.title{
+	background-repeat:repeat-x;
+	margin:0;
+	padding:0;
+}
+ul.column li.tail{
+	text-align:right;
+	padding-right:12px;
+	background-image:none;
+}
+
+/*1*/
+ul.s1{
+	width:900px;
+}
+ul.s1,ul.s1 li{
+	border-color:#2e9803;
+}
+ul.s1 li{
+	background-position: 0 -52px;
+}
+ul.s1 li.title{
+	background-position: 0 -26px;
+}
+ul.s1 li.title div{
+	background-position: 0 0;
+	padding-left:24px;
+}
