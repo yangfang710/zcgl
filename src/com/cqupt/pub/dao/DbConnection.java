@@ -12,8 +12,8 @@ public final class DbConnection {
 	private String driver = "com.mysql.jdbc.Driver";
 
 	private String url = "jdbc:mysql://localhost:3306/zcgl?characterEncoding=gb2312";
-	private String user = "zcgl";
-	private String password = "zcgl6126";
+	private String user = "root";
+	private String password = "admin";
 
 	// private String url =
 	// "jdbc:mysql://172.23.8.200:3306/zcgl?characterEncoding=gb2312";
