@@ -36,7 +36,7 @@ function show(messageId){
   	   buttons: [{ text: '关闭窗口', onclick: f_closeAddWindow }]
     }); 
     m.max();
-});
+}
 </script>
 </head>
 <body>
